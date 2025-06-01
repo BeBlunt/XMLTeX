@@ -1,0 +1,117 @@
+:root {
+	--pad: 6px;
+	--brdline: 3px;
+	--brdrad: 5px;
+	--deskCol: rgb(207,207,207);
+	margin: auto; /* for central alignment */;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato';
+}
+
+h1 {
+	display: block;
+	text-align: center;
+	font-size: xx-large;
+}
+
+.chapter {
+	counter-increment: chapter-counter;
+}
+
+.chaptername::before {
+	content: counter(chapter-counter) ' ';
+	color: rgb(104, 104, 104);
+	font-size: 200%;
+}
+
+.subtitle {
+	text-align: center;
+	font-weight: lighter;
+}
+
+h1 + .subtitle {
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+.topic {
+	counter-increment: topic-counter;
+	border: 1px dashed rgb(197, 197, 197);
+}
+
+h2::before {
+	content: counter(chapter-counter) '.' counter(topic-counter) ': ';
+}
+
+body {
+	font-family: 'Century';
+	font-size: large;
+	text-align: justify;
+	background-color: rgb(255, 251, 245);
+	padding: 50px;
+	counter-reset: chapter-counter;
+}
+
+section {
+	padding: var(--pad);
+}
+
+.chapter {
+	background-color: white;
+}
+
+.topic + .topic {
+	margin-top: var(--pad);
+	margin-bottom: var(--pad);
+}
+
+div, footer, blockquote {
+	margin-block-end: calc(var(--pad) *2);
+	padding: var(--pad);
+}
+
+p {
+	margin:5px; /* to compensate for extra vertical spaces especially within question blocks */
+}
+
+table, th, td {
+	border: black solid 1px;
+}
+
+div > div {
+	margin: calc(var(--pad) * -0.5); margin-top: calc(var(--pad)*2);
+}
+
+footer {
+	background-color: rgb(230, 255, 255);
+}
+
+.texlib {
+	display: none;
+}
+
+
+/********** unrequired elements ************/
+
+ruby {
+	font-size: xx-large;
+}
+
+kbd>kbd {
+	border-radius: 3px;
+	padding: 1px 2px 0;
+	background-color: rgb(241, 241, 241);
+	border: 1px solid rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 3px;
+}
+
+.page {
+	padding: 100px;
+	background-color: white;
+	box-shadow:  1px 1px 10px;
+	border: none;
+	max-width: 8.25in; /* A4 width */
+	min-height: 11.7in;
+}

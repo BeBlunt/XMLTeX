@@ -1,0 +1,47 @@
+/* all sections that need to be hidden, and shown by buttons
+.proof, .corproof, .sol, .answer {
+  display: none;
+  overflow: none;
+}
+*/
+
+.show {
+  cursor: pointer;
+  display: block;
+
+  border-radius: var(--brdrad);
+  margin-top: var(--pad);
+  margin-bottom: calc(-0.5 * var(--pad));
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px white solid;
+}
+
+.show-active, .show:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px white solid;
+  color: white;
+}
+
+#proof-show::after {
+  content: "Show Proof \02C5";
+  font-family: 'Segoe UI', Roboto,'Open Sans';
+  font-weight: bold;
+}
+
+#corproof-show::after {
+  content: "Show Corollary Proof \02C5";
+  font-family: 'Segoe UI', Roboto,'Open Sans';
+  font-weight: bold;
+}
+
+#sol-show::after {
+  content: "Show Solution \02C5";
+  font-family: 'Segoe UI', Roboto,'Open Sans';
+  font-weight: bold;
+}
+
+#ans-show::after {
+  content: "Show Answer \02C5";
+  font-family: 'Segoe UI', Roboto,'Open Sans';
+  font-weight: bold;
+}

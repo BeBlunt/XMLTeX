@@ -1,0 +1,54 @@
+/* tidbit formulae definition blockquote */
+
+.tidbit {
+	background-color: rgb(255, 253, 231);
+	border-width: 0px 0px 0px var(--brdline);
+	border-style: solid;
+	border-color: rgb(115, 122, 24);
+	border-radius: var(--brdrad);
+}
+
+.formulae {
+  background-color: rgb(248, 247, 255);
+  border-radius: var(--brdrad);
+	padding-block: var(--pad);
+	border-left: 5px solid rgb(24, 31, 122);
+}
+
+.formulae::before {
+	content: 'Formula Box';
+	font-weight: bolder;
+	display: block;
+	text-align: center;
+	font-size: x-large ;
+}
+
+.formulae ol {
+	list-style-type: lower-alpha;
+}
+
+.definition {
+  counter-increment: definition-counter;
+  background-color: rgb(177, 227, 255);
+	border-width: 0px 0px 0px var(--brdline);
+	border-style: solid;
+	border-color: rgb(24, 31, 122);
+	border-radius: var(--brdrad);
+	padding: var(--pad);
+}
+dt {
+	font-weight: bold;
+}
+dt::before {
+  content: "Definition " counter(chapter-counter) "." counter(topic-counter) "." counter(definition-counter) ": ";
+	color: rgb(75, 75, 75);
+}
+dd {
+	background-color: aliceblue;
+	padding: var(--brdrad);
+}
+
+blockquote {
+	background-color: rgb(236, 236, 236);
+	border-left: 3px solid rgb(143, 143, 143);
+}

@@ -1,0 +1,63 @@
+.example {
+  counter-increment: example-counter;
+  background-color: rgb(39, 11, 117);
+  color: white;
+  border-radius: 5px;
+}
+
+.example::before {
+  content: 'Example ' counter(chapter-counter) "."counter(topic-counter)"." counter(example-counter) ":";
+  display: block;
+  font-weight: bold;
+}
+
+.solution {
+  color: black;
+  background-color: rgb(240, 232, 255);
+  margin: calc(var(--pad) * -0.5); margin-top: var(--pad);
+  border-radius: var(--brdrad);
+}
+
+.question {
+  counter-increment: question-counter;
+  background-color: rgb(255, 235, 218);
+  border-width: var(--brdline) 0px 0px 0px;
+  border-style: solid;
+  border-color: rgb(230, 125, 40);
+  border-radius: var(--brdrad);
+}
+
+.question::before {
+  content: 'Question ' counter(chapter-counter) "."counter(topic-counter)"." counter(question-counter) ":";
+  display: inline;
+  font-weight: bold;
+}
+
+.qsource {
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  padding: 3px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px;
+  text-align: right;
+  font-size: small;
+}
+
+.answer {
+  background-color: rgb(251, 255, 247);
+  margin: calc(var(--pad) * -1); margin-top: var(--pad);
+  border-width: 0px 3px 0px 3px;
+  border-style: solid;
+  border-color: rgb(27, 139, 45);
+  border-radius: var(--brdrad);
+  display: block;
+}
+
+.hint {
+	background-color: rgb(255, 253, 231);
+}
+
+.hint::before {
+  content: 'Hint:';
+  font-weight: bold;
+}
